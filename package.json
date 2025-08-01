@@ -1,0 +1,36 @@
+{
+  "name": "playwright-react-router-coverage",
+  "version": "0.0.1-beta.1",
+  "description": "Sets up code coverage using playwright in a react-router framework app",
+  "main": "index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./globalTeardown": {
+      "import": "./globalTeardown.ts",
+      "default": "./globalTeardown.ts"
+    },
+    "./test": {
+      "import": "./test.ts",
+      "default": "./test.ts"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joey Jiron <joeyjiron06@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "monocart-reporter": "^2.9.21"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.54.2"
+  }
+}

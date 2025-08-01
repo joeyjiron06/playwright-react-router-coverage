@@ -1,0 +1,59 @@
+import MonocartReporter, {
+  type MonocartReporterOptions,
+} from "monocart-reporter"; // type CoverageReportOptions, // type MonocartReporterOptions,
+import path from "node:path";
+
+import { type CoverageReportOptions } from "monocart-reporter";
+
+const removeLocalhostPrefix = (p: string) => {
+  const prefix = "localhost-5173/";
+  if (p.startsWith(prefix)) {
+    return p.slice(prefix.length);
+  }
+  return p;
+};
+
+const coverageReportOptions: CoverageReportOptions = {
+  // logging: 'debug',
+  name: "Remix V8 Coverage Report",
+
+  entryFilter: {
+    "**/node_modules/**": false,
+    "**/*.css": false,
+    "**/manifest*": false,
+
+    // for client side entries: http://localhost:3000/app/*
+    "**/assets/**": true,
+
+    // for server side
+    "**/build/server/**": true,
+  },
+
+  sourceFilter: {
+    // for sources from sourcemap
+    "**/node_modules/**": false,
+    "**/*": true,
+  },
+
+  sourcePath: (filePath, info) => {
+    if (!filePath.includes("/") && info.distFile) {
+      return removeLocalhostPrefix(
+        `${path.dirname(info.distFile)}/${filePath}`
+      );
+    }
+    return removeLocalhostPrefix(filePath);
+  },
+
+  reports: ["v8", "console-details"],
+};
+
+// @ts-expect-error - they don't export types properly
+export default class PlaywrightReporter extends MonocartReporter {
+  constructor(options: MonocartReporterOptions) {
+    super({
+      outputFile: "playwright-react-router-coverage/index.html",
+      coverage: coverageReportOptions,
+      ...options,
+    } satisfies MonocartReporterOptions);
+  }
+}
