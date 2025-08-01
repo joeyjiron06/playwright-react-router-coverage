@@ -1,6 +1,6 @@
 import MonocartReporter, {
   type MonocartReporterOptions,
-} from "monocart-reporter"; // type CoverageReportOptions, // type MonocartReporterOptions,
+} from "monocart-reporter";
 import path from "node:path";
 
 import { type CoverageReportOptions } from "monocart-reporter";
@@ -15,7 +15,7 @@ const removeLocalhostPrefix = (p: string) => {
 
 const coverageReportOptions: CoverageReportOptions = {
   // logging: 'debug',
-  name: "Remix V8 Coverage Report",
+  name: "Playwright React Router Coverage Report",
 
   entryFilter: {
     "**/node_modules/**": false,
