@@ -5,7 +5,12 @@ import path from "path";
 import type { PlaywrightTestConfig, TestInfo } from "playwright/test";
 import { fileURLToPath } from "url";
 
-export default async (config: PlaywrightTestConfig) => {
+/**
+ * Global teardown for Playwright tests.
+ * This writes the V8 coverage data to the specified directory
+ * for the server side code.
+ */
+export default async function globalTeardown(config: PlaywrightTestConfig) {
   const client = await CDPClient({
     port: 9229,
   });
@@ -61,4 +66,4 @@ export default async (config: PlaywrightTestConfig) => {
     } as TestInfo;
     await addCoverageReport(coverageList, mockTestInfo);
   }
-};
+}
