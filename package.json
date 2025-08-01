@@ -24,6 +24,7 @@
   "author": "Joey Jiron <joeyjiron06@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "monocart-coverage-reports": "^2.12.6",
     "monocart-reporter": "^2.9.21"
   },
   "devDependencies": {
