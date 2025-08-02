@@ -1,9 +1,9 @@
-import fs from "fs";
 import { CDPClient } from "monocart-coverage-reports";
 import MonocartReporter, { addCoverageReport } from "monocart-reporter";
-import path from "path";
 import type { PlaywrightTestConfig, TestInfo } from "playwright/test";
+import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 /**
  * Global teardown for Playwright tests.

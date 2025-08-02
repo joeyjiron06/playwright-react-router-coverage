@@ -2,13 +2,18 @@
   "name": "@lazybear/playwright-react-router-coverage",
   "version": "0.0.1-beta.1",
   "description": "Sets up code coverage using playwright in a react-router framework app",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "bin": {
-    "serve": "./bin.ts"
+    "serve": "./dist/bin.js"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./globalTeardown": "./dist/globalTeardown.js",
+    "./test": "./dist/test.js"
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --project tsconfig.json"
   },
   "author": "Joey Jiron <joeyjiron06@gmail.com>",
   "license": "ISC",
