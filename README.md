@@ -67,3 +67,11 @@ test("should add", () => {
 Hi 👋, I'm Joey Jiron. I'm a web developer who is passionate about testing. I made this package because it was sooo difficult to figure out how to get code coverage from a React Router app in framework mode because there is server code and client code involved. The only answer I could find was [this repo](https://github.com/cenfun/remix-with-playwright/tree/main).
 
 This package is inspired by that repo and makes it easy to get code coverage without having to deal with all the config setup that it takes.
+
+## Publishing
+
+run
+
+```bash
+npx jsr publish
+```
