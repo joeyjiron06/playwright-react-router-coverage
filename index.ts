@@ -13,7 +13,7 @@ const removeLocalhostPrefix = (p: string) => {
   return p;
 };
 
-const coverageReportOptions: CoverageReportOptions = {
+export const coverageReportOptions: CoverageReportOptions = {
   // logging: 'debug',
   name: "Playwright React Router Coverage Report",
 
