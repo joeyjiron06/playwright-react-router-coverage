@@ -1,14 +1,11 @@
 {
   "name": "@lazybear/playwright-react-router-coverage",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "main": "index.ts",
   "exports": {
     ".": "./index.ts",
     "./globalTeardown": "./globalTeardown.ts",
     "./test": "./test.ts"
-  },
-  "bin": {
-    "playwright-react-router-server": "./bin.ts"
   },
   "license": "ISC"
 }
