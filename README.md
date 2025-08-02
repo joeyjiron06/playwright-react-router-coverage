@@ -13,7 +13,7 @@
 </div>
 
 ```bash
-npm install playwright-react-router-coverage
+npx jsr add @lazybear/playwright-react-router-coverage
 ```
 
 This package adds code coverage to your React Router that uses **FRAMEWORK MODE**.
@@ -28,18 +28,21 @@ const port = 8123;
 
 export default defineConfig({
   // 1. setup the reporter
-  reporter: [["playwright-react-router-coverage"]],
+  reporter: [["@lazybear/playwright-react-router-coverage"]],
 
   // 2. global teardown needed for collecting coverage from server
-  globalTeardown: "playwright-react-router-coverage/globalTeardown",
+  globalTeardown: "@lazybear/playwright-react-router-coverage/globalTeardown",
 
   webServer: {
-    command: `react-router dev --port ${port} --mode test`,
+    command: `rimraf .v8-coverage && \
+    react-router build --mode test --minify=false --sourcemapClient=true --sourcemapServer=true && \
+
+    cross-env NODE_V8_COVERAGE=.v8-coverage NODE_OPTIONS=--inspect=9229 react-router-serve ./build/server/index.js
+    `,
     port,
     // 3. collect coverage from v8 engine in nodejs
     env: {
-      NODE_V8_COVERAGE: ".v8-coverage",
-      NODE_OPTIONS: "--inspect=9229",
+      PORT: String(port),
     },
   },
 

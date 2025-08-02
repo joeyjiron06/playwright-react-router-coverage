@@ -1,6 +1,6 @@
 import fs from "fs";
 import { CDPClient } from "monocart-coverage-reports";
-import { addCoverageReport } from "monocart-reporter";
+import MonocartReporter, { addCoverageReport } from "monocart-reporter";
 import path from "path";
 import type { PlaywrightTestConfig, TestInfo } from "playwright/test";
 import { fileURLToPath } from "url";
@@ -60,6 +60,22 @@ export default async function globalTeardown(config: PlaywrightTestConfig) {
         console.log("could not locate source content for entry", filePath);
       }
     });
+
+    const coverageReportOptions = Array.isArray(config.reporter)
+      ? config.reporter.find((reporterConfig) => {
+          if (Array.isArray(reporterConfig)) {
+            return (
+              reporterConfig[0].includes("@lazybear") &&
+              reporterConfig[0].includes("playwright-react-router-coverage")
+            );
+          }
+        })
+      : undefined;
+
+    if (coverageReportOptions) {
+      // @ts-expect-error - they don't export types properly
+      MonocartReporter.Util.reporterOptions = coverageReportOptions[1];
+    }
 
     const mockTestInfo = {
       config,
