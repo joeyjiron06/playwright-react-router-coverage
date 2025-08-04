@@ -2,11 +2,7 @@
 
 <a href="https://playwright.dev" style="display: inline-block">
 <img height="100" width="100" alt="playwright" style="display: inline-block" src="https://playwright.dev/img/playwright-logo.svg" />
-</a>
-
-<span style="font-size: 2rem">+</span>
-
-<a href="https://reactrouter.com" style="display: inline-block">
+</a><span style="font-size: 2rem">+</span><a href="https://reactrouter.com" style="display: inline-block">
 <img height="100" width="200" style="object-fit:contain; display: inline-block" alt="react-router" src="https://reactrouter.com/splash/hero-3d-logo.dark.webp" />
 </a>
 
