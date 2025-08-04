@@ -1,18 +1,16 @@
 # Playwright React Router Coverage
 
-<span>
+<div style="display: flex; gap: 1rem; align-items: center;">
   <a href="https://playwright.dev">
   <img height="100" width="100" alt="playwright" src="https://playwright.dev/img/playwright-logo.svg" />
   </a>
-</span>
 
-  <h2>+</h2>
+<span style="font-size: 2rem">+</span>
 
-<span>
   <a href="https://reactrouter.com">
   <img height="100" width="200" style="object-fit:contain" alt="react-router" src="https://reactrouter.com/splash/hero-3d-logo.dark.webp" />
   </a>
-</span>
+</div>
 
 ```bash
 npx jsr add @lazybear/playwright-react-router-coverage
