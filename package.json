@@ -18,9 +18,7 @@
   "author": "Joey Jiron <joeyjiron06@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "rimraf": "^6.0.1"
-  },
-  "peerDependencies": {
+    "rimraf": "^6.0.1",
     "@playwright/test": "^1.54.2",
     "monocart-coverage-reports": "^2.12.6",
     "monocart-reporter": "^2.9.21",
