@@ -1,6 +1,6 @@
-import path from "node:path";
+import path from "path";
 import { rimraf } from "rimraf";
-import { execSync } from "node:child_process";
+import { execSync } from "child_process";
 
 async function main() {
   const cwd = process.cwd();

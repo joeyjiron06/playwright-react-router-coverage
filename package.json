@@ -18,11 +18,13 @@
   "author": "Joey Jiron <joeyjiron06@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "rimraf": "^6.0.1"
+  },
+  "peerDependencies": {
     "@playwright/test": "^1.54.2",
     "monocart-coverage-reports": "^2.12.6",
     "monocart-reporter": "^2.9.21",
-    "playwright": "^1.54.2",
-    "rimraf": "^6.0.1"
+    "playwright": "^1.54.2"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",

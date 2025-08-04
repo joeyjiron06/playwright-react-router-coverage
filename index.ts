@@ -1,7 +1,7 @@
 import MonocartReporter, {
   type MonocartReporterOptions,
 } from "monocart-reporter";
-import path from "node:path";
+import path from "path";
 
 import { type CoverageReportOptions } from "monocart-reporter";
 
@@ -44,7 +44,7 @@ export const coverageReportOptions: CoverageReportOptions = {
     return removeLocalhostPrefix(filePath);
   },
 
-  reports: ["v8", "console-details"],
+  reports: ["html", "console-details", "json", "cobertura"],
 };
 
 // @ts-expect-error - they don't export types properly

@@ -16,7 +16,6 @@ interface AppFixtures {
 const test: typeof baseTest = baseTest.extend<AppFixtures>({
   autoTestFixture: [
     async ({ page }, use): Promise<void> => {
-      console.log("Running auto test fixture");
       const isChromium =
         test.info().project.name === "Desktop Chrome" ||
         test.info().project.name === "Microsoft Edge";
@@ -46,8 +45,6 @@ const test: typeof baseTest = baseTest.extend<AppFixtures>({
           await addCoverageReport(coverageList, test.info());
         }
       }
-
-      console.log("Done Running auto test fixture");
     },
     {
       scope: "test",
