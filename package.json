@@ -1,6 +1,6 @@
 {
   "name": "playwright-react-router-coverage",
-  "version": "0.0.1-beta.1",
+  "version": "1.0.0-beta.1",
   "description": "Sets up code coverage using playwright in a react-router framework app",
   "main": "dist/index.js",
   "exports": {
