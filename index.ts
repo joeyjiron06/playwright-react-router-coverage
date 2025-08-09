@@ -1,17 +1,17 @@
 import MonocartReporter, {
   type MonocartReporterOptions,
 } from "monocart-reporter";
-import path from "path";
+// import path from "path";
 
 import { type CoverageReportOptions } from "monocart-reporter";
 
-const removeLocalhostPrefix = (p: string) => {
-  const prefix = "localhost-5173/";
-  if (p.startsWith(prefix)) {
-    return p.slice(prefix.length);
-  }
-  return p;
-};
+// const removeLocalhostPrefix = (p: string) => {
+//   const prefix = "localhost-5173/";
+//   if (p.startsWith(prefix)) {
+//     return p.slice(prefix.length);
+//   }
+//   return p;
+// };
 
 export const coverageReportOptions: CoverageReportOptions = {
   // logging: 'debug',
@@ -32,19 +32,19 @@ export const coverageReportOptions: CoverageReportOptions = {
   sourceFilter: {
     // for sources from sourcemap
     "**/node_modules/**": false,
-    "**/*": true,
+    "**/*.{js,ts,jsx,tsx,mjs,mts}": true,
   },
 
-  sourcePath: (filePath, info) => {
-    if (!filePath.includes("/") && info.distFile) {
-      return removeLocalhostPrefix(
-        `${path.dirname(info.distFile)}/${filePath}`
-      );
-    }
-    return removeLocalhostPrefix(filePath);
-  },
+  // sourcePath: (filePath, info) => {
+  //   if (!filePath.includes("/") && info.distFile) {
+  //     return removeLocalhostPrefix(
+  //       `${path.dirname(info.distFile)}/${filePath}`
+  //     );
+  //   }
+  //   return removeLocalhostPrefix(filePath);
+  // },
 
-  reports: ["html", "console-details", "json", "cobertura"],
+  reports: ["html", "json", "cobertura"],
 };
 
 // @ts-expect-error - they don't export types properly

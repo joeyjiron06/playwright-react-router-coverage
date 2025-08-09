@@ -64,9 +64,8 @@ export default async function globalTeardown(config: PlaywrightTestConfig) {
     const coverageReportOptions = Array.isArray(config.reporter)
       ? config.reporter.find((reporterConfig) => {
           if (Array.isArray(reporterConfig)) {
-            return (
-              reporterConfig[0].includes("@lazybear") &&
-              reporterConfig[0].includes("playwright-react-router-coverage")
+            return reporterConfig[0].includes(
+              "playwright-react-router-coverage"
             );
           }
         })
