@@ -1,11 +1,8 @@
 {
-  "name": "@playwright/react-router-coverage",
+  "name": "react-router-coverage",
   "version": "0.0.1-beta.1",
   "description": "Sets up code coverage using playwright in a react-router framework app",
   "main": "dist/index.js",
-  "bin": {
-    "serve": "./dist/bin.js"
-  },
   "exports": {
     ".": "./dist/index.js",
     "./globalTeardown": "./dist/globalTeardown.js",
